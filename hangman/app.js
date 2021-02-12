@@ -13,7 +13,14 @@ window.addEventListener('keypress', (e) => {
     guessesElement.textContent = game1.statusMessage
 })
 
-getPuzzle((puzzle) => {
+getPuzzle('2').then((puzzle) => {
     console.log(puzzle);
+}, (err) => {
+    console.log(`Error is : ${err}`);
 })
 
+getCountry('UA').then((country) => {
+    console.log(`Country is: ${country}`);
+}).catch((error) => {
+    console.log(`Error: ${error}`);
+})

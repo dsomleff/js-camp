@@ -1,17 +1,34 @@
-const getPuzzle = (callback) => {
-    callback('Some fake')
+const getPuzzle = (wordCount) => new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest()
 
+    request.open('GET', `http://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
+    request.send()
 
-    // const request = new XMLHttpRequest()
+    request.addEventListener('readystatechange', (e) => {
+        if (e.target.readyState === 4 && e.target.status === 200) {
+            const data = JSON.parse(e.target.responseText)
 
-    // request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=1')
-    // request.send()
+            resolve(data.puzzle)
+        } else if (e.target.readyState === 4) {
+            reject('An error has taken place')
+        } 
+    })
+})
 
-    // request.addEventListener('readystatechange', (e) => {
-    //     if (e.target.readyState === 4 && e.target.status === 200) {
-    //         data = JSON.parse(e.target.responseText)
-    //     } else if (e.target.readyState === 4) {
-    //         console.log('Ooops, Error comes!');
-    //     }
-    // })
-}
+const getCountry = (countryCode) => new Promise((resolve, reject) => {
+    const countryRequest = new XMLHttpRequest()
+
+    countryRequest.addEventListener('readystatechange', (e) => {
+        if (e.target.readyState === 4 && e.target.status === 200) {
+            const data = JSON.parse(e.target.responseText)
+            const country = data.find((country) => country.alpha2Code === countryCode)
+            
+            resolve(country.name)
+        } else if (e.target.readyState === 4) {
+            reject('Ooops, Error comes!')
+        } 
+    })
+
+    countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
+    countryRequest.send()
+})
