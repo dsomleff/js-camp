@@ -1,6 +1,5 @@
 const puzzleElement = document.querySelector('#puzzle')
 const guessesElement = document.querySelector('#guesses')
-
 const game1 = new Hangman('Cat', 3)
 
 puzzleElement.textContent = game1.puzzle
@@ -19,20 +18,11 @@ getPuzzle('2').then((puzzle) => {
     console.log(`Error: ${error}`);
 })
 
-getCountry('UA').then((country) => {
-    console.log(`Country is: ${country}`);
+getLocation().then((location) => {
+    console.log(`You are currently in ${location.city}, ${location.country} and your region is ${location.region}`);
+    return getCountry(location.country)
+}).then((country) => {
+    console.log(`You country is ${country}`);
 }).catch((error) => {
     console.log(`Error: ${error}`);
 })
-
-// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
-//     if (response.status === 200) {
-//         return response.json()
-//     } else {
-//         throw new Error('unable to fetch puzzle')
-//     }
-// }).then((data) => {
-//     console.log(data.puzzle);
-// }).catch((error) => {
-//     console.log(error);
-// })
