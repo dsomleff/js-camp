@@ -18,4 +18,5 @@ Here is the list of main topics covered by the course.
  - Data Storage, Libraries
  - Arrow Functions
  - Asynchronous JavaScript
+ - CSS themes for Apps
  - Babel, Webpack
