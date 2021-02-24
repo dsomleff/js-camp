@@ -2,27 +2,38 @@
 <html>
     <head>
         <title>Notes App</title>
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
 
     <body>
-        <h1>Notes App</h1>
-        <h2>Takes notes and never forget</h2>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">Notes App</h1>
+                <h2 class="header__subtitle">Takes notes and never forget</h2>
+            </div>
+        </header>
 
-        <input id="search-text" type="text" placeholder="Filter notes">
+        <div class="actions">
+            <div class="actions__container">
+                <input id="search-text" class="input" type="text" placeholder="Filter notes">
 
-        <select id="filter-by">
-            <option value="byEdited">Sort by last edited</option>
-            <option value="byCreated">Sort by recently created</option>
-            <option value="byAlphabet">Sort by alphabetically</option>
-        </select>
+                <select id="filter-by" class="dropdown">
+                    <option value="byEdited">Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="byAlphabet">Sort by alphabetically</option>
+                </select>
+            </div>
+        </div>
 
-        <div id="notes"></div>
+        <div class="container">
+            <div id="notes"></div>
 
-        <button id="create-note">Create a note</button>
+            <button id="create-note" class="button">Create a note</button>
+        </div>
     </body>
 
     <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
-    <script src="notes-functions.js"></script>
-    <script src="notes-app.js"></script>
+    <script src="scripts/notes-functions.js"></script>
+    <script src="scripts/notes-app.js"></script>
 </html>
