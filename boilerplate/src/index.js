@@ -1,11 +1,10 @@
-const ju = 'JuJu'
-console.log(ju)
+// import {add} from'./utilities.js'
+// or short form
+import otherSquare, { add, name } from './utilities'
+import scream from './scream'
 
-class Hangman {
-    myFunc() {
-        return 'Test'
-    }
-}
+console.log(add(32, 1));
 
-const hangman = new Hangman
-console.log(hangman.myFunc())
+console.log(scream(`i love ${name}`));
+
+console.log(otherSquare(3));
