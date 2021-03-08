@@ -3,7 +3,7 @@
 import otherSquare, { add, name } from './utilities'
 import scream from './scream'
 
-console.log(add(32, 1));
+console.log(add(32, 3));
 
 console.log(scream(`i love ${name}`));
 

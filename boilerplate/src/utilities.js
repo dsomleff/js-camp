@@ -3,9 +3,10 @@
 
 /* Alternative way way to export */
 const add = (a, b) => a + b;
-const name = 'Ju';
+const name = 'Juka';
 const square = (x) => x * x;
 
+console.log('from code');
 export { add, name, square as default }
 
 /* One way to export */

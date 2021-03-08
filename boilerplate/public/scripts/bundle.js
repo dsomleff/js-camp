@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log(33),console.log(`${"i love Ju".toUpperCase()}!`),console.log(3*3)})();
+(()=>{"use strict";var o;console.log(35),console.log((o="i love ".concat("Juka"),"".concat(o.toUpperCase(),"!"))),console.log(3*3)})();
