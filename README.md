@@ -6,7 +6,7 @@ All idea, tasks and some solutions were taken from ["The Modern JavaScript Bootc
 
 # Technologies
  - Languages: JavaScript
- - NPM packages: Live Server, Moment
+ - NPM packages: Live Server, Moment, Babel, Webpack.
 
 
 # Apps Examples
@@ -32,3 +32,4 @@ Here is the list of main topics covered by the course.
  - Asynchronous JavaScript
  - CSS themes for Apps and Hosting Applications
  - Babel, Webpack
+ - Convert existed code into JS Modules

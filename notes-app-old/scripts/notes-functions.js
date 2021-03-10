@@ -16,6 +16,15 @@ const saveNote = (notes) => {
     localStorage.setItem('notes', JSON.stringify(notes))
 }
 
+// Remove note from the list
+const removeNote = ((id) => {
+    const noteIndex = notes.findIndex((note) => note.id === id)
+
+    if (noteIndex > -1) {
+        notes.splice(noteIndex, 1)
+    }
+})
+
 // Genearate the DOM structure for a note
 const generateNoteDOM = (note) => {
     const noteElement = document.createElement('a')
@@ -42,15 +51,6 @@ const generateNoteDOM = (note) => {
 
     return noteElement
 }
-
-// Remove note from the list
-const removeNote = ((id) => {
-    const noteIndex = notes.findIndex((note) => note.id === id)
-
-    if (noteIndex > -1) {
-        notes.splice(noteIndex, 1)
-    }
-})
 
 // Sort your notes by one of the 3 ways
 const sortNotes = ((notes, sortBy) => {

@@ -1,6 +1,6 @@
 const puzzleElement = document.querySelector('#puzzle')
 const guessesElement = document.querySelector('#guesses')
-let game1s
+let game1
 
 const render = () => {
     puzzleElement.innerHTML = ''
