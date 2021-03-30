@@ -9,7 +9,7 @@ console.log(scream(`i love ${name}`));
 
 console.log(otherSquare(3));
 
-// Rest Parameter
+// ========= Rest Parameter================//
 const calculateAverage = (thing, ...numbers) => {
     // return (number1 + number2) / 2;
     let sum = 0;
@@ -20,12 +20,34 @@ const calculateAverage = (thing, ...numbers) => {
 };
 console.log(calculateAverage('age', 0, 100, 88, 64));
 
-// Task
+// ================ Spread Operator ======================//
 const printTeam = (teamName, coach, ...players) => {
     console.log(`Team: ${teamName}`);
     console.log(`Coach: ${coach}`);
-    // console.log(`Team: ${players}`);
     console.log(`Team: ${players.join(', ')}`);
+
 };
-// printTeam('Liberty', 'JuJu', ['Juka','Buka', 'Duka']);
-printTeam('Liberty', 'JuJu', 'Juka','Buka', 'Duka');
+
+const team = {
+    team: 'Liberty',
+    coach: 'JuJu',
+    players: ['Juka','Buka', 'Duka']
+};
+
+// printTeam('Liberty', 'JuJu', 'Juka','Buka', 'Duka');
+printTeam(team.name, team.coach, ...team.players);
+
+/**
+ * How to copy array with Spread Operator.
+ */
+const cities = ['Odessa', 'Amsterdam', 'Vienna'];
+const citiesCopy = [...cities, 'Kiev'];
+console.log(cities);
+console.log(citiesCopy);
+
+/**
+ * How to add element to array without push
+ */
+let citiesPush = ['Odessa', 'Amsterdam', 'Vienna'];
+citiesPush = [ 'Kiev', ...citiesPush];
+console.log(citiesPush);
