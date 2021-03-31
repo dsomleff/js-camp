@@ -51,3 +51,32 @@ console.log(citiesCopy);
 let citiesPush = ['Odessa', 'Amsterdam', 'Vienna'];
 citiesPush = [ 'Kiev', ...citiesPush];
 console.log(citiesPush);
+
+// ================ Destructuring with Objects ======================//
+const todo = {
+    id: 'qwerty123',
+    text: 'Make a coffee',
+    completed: false
+};
+
+// Destructuring Obj in function.
+const printTodo = ({ text, completed }) => {
+    console.log(`${text}: ${completed}`);
+};
+printTodo(todo);
+
+const { text:todoText, completed, details = 'no details yet', ...others } = todo;
+
+console.log(todoText);
+console.log(completed);
+console.log(details);
+console.log(others);
+console.log(todo);
+
+// ================ Destructuring with Arrays ======================//
+const age = [35, 18, 13];
+const [firstAge, secondAge, , lastAge = 10] = age;
+// we can use Spread Operator as well, like in Object Destructuring.
+console.log(firstAge);
+console.log(secondAge);
+console.log(lastAge);
