@@ -22,6 +22,7 @@ P.S. NoteApp and Hangman hosted on https://app.netlify.com/. TodosApp deployed b
 
 # Course Description
 Here is the list of main topics covered by the course.
+ - `101` folder contains examples of how js works under the hood
  - JavaScript Basics: Variables and Flow Control
  - JavaScript Functions
  - JavaScript Objects
