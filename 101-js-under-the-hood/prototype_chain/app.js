@@ -29,3 +29,11 @@ person.getFormalFullName = function() {
 
 console.log(john.getFormalFullName());
 console.log(jane.getFormalFullName());
+
+// This code for browser only
+let j = {};
+let ju = [];
+let juk = '';
+// now go into browser and call any variables above. 
+// You will see all build in methods available 
+// for objects, arrays and strings by prototype chain
